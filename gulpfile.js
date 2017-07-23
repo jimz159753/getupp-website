@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var less = require('gulp-less');
+const sass = require('gulp-sass')
 var browserSync = require('browser-sync').create();
 var header = require('gulp-header');
 var cleanCSS = require('gulp-clean-css');
@@ -16,6 +17,12 @@ var banner = ['/*!\n',
     ' */\n',
     ''
 ].join('');
+
+gulp.task('sass', () =>  {
+  return gulp.src('./sass/**/*.sass')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('./css'));
+});
 
 // Compile LESS files from /less into /css
 gulp.task('less', function() {
@@ -73,7 +80,7 @@ gulp.task('copy', function() {
 })
 
 // Run everything
-gulp.task('default', ['less', 'minify-css', 'minify-js', 'copy']);
+gulp.task('default', ['sass', 'minify-css', 'minify-js', 'copy']);
 
 // Configure the browserSync task
 gulp.task('browserSync', function() {
@@ -86,6 +93,7 @@ gulp.task('browserSync', function() {
 
 // Dev task with browserSync
 gulp.task('dev', ['browserSync', 'less', 'minify-css', 'minify-js'], function() {
+    gulp.watch('./sass/**/*.sass', ['sass'])
     gulp.watch('less/*.less', ['less']);
     gulp.watch('css/*.css', ['minify-css']);
     gulp.watch('js/*.js', ['minify-js']);
