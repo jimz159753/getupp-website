@@ -66,15 +66,6 @@ hr.star-primary:after {
 .img-centered {
   margin: 0 auto;
 }
-header {
-  text-align: center;
-  background: #18BC9C;
-  color: white;
-}
-header .container {
-  padding-top: 100px;
-  padding-bottom: 50px;
-}
 header img {
   display: block;
   margin: 0 auto 20px;
@@ -134,6 +125,7 @@ header .intro-text .skills {
 .navbar-custom .navbar-nav li.active a {
   color: white;
   background: #18BC9C;
+  height: 40px;
 }
 .navbar-custom .navbar-nav li.active a:hover,
 .navbar-custom .navbar-nav li.active a:focus,
@@ -155,7 +147,6 @@ header .intro-text .skills {
 }
 @media (min-width: 768px) {
   .navbar-custom {
-    padding: 25px 0;
     -webkit-transition: padding 0.3s;
     -moz-transition: padding 0.3s;
     transition: padding 0.3s;
