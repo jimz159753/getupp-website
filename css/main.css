@@ -7,6 +7,25 @@ header {
   background-size: cover;
   -o-background-size: cover; }
 
+.bounceInDown {
+  animation: bounceInDown 3s; }
+
+@keyframes bounceInDown {
+  from, 60%, 75%, 90%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -3000px, 0); }
+  60% {
+    opacity: 1;
+    transform: translate3d(0, 25px, 0); }
+  75% {
+    transform: translate3d(0, -10px, 0); }
+  90% {
+    transform: translate3d(0, 5px, 0); }
+  to {
+    transform: none; } }
+
 #vistaPrincipal .center-block {
   padding-top: 20px;
   align-items: center;
@@ -34,11 +53,11 @@ header {
   border-style: solid;
   border-width: 1px;
   border-color: #B2B2B2;
-  border-radius: 5px;
+  border-radius: 3px;
   height: 350px;
   width: 350px;
   padding: 50px;
-  box-shadow: 10px 10px 5px #888888; }
+  box-shadow: 3px 3px 3px #888888; }
 
 .each-border p {
   padding-top: 20px;
@@ -87,7 +106,13 @@ section.success {
   padding-bottom: 80px;
   margin-bottom: 20px;
   padding-top: 50px;
-  color: white; }
+  color: white;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #B2B2B2;
+  border-radius: 3px;
+  padding: 50px;
+  box-shadow: 3px 3px 3px #888888; }
 
 .button-styled {
   border-radius: 0px;
@@ -106,3 +131,22 @@ section.success {
 .control-group {
   padding-bottom: 15px;
   padding-top: 15px; }
+
+@keyframes bounceInRight {
+  from, 60%, 75%, 90%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+  from {
+    opacity: 0;
+    transform: translate3d(3000px, 0, 0); }
+  60% {
+    opacity: 1;
+    transform: translate3d(-25px, 0, 0); }
+  75% {
+    transform: translate3d(10px, 0, 0); }
+  90% {
+    transform: translate3d(-5px, 0, 0); }
+  to {
+    transform: none; } }
+
+.bounceInRight {
+  animation: bounceInRight 3s; }
