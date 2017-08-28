@@ -251,7 +251,7 @@ section.success {
   resize: none;
 }
 .floating-label-form-group label {
-  display: block;
+  display: inline-block;
   z-index: 0;
   position: relative;
   top: 2em;
